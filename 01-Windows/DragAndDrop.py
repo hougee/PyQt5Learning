@@ -10,7 +10,6 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import  QMouseEvent,QCursor
 from PyQt5.QtWidgets import QMainWindow,QApplication,QDesktopWidget,QVBoxLayout,QPushButton,QWidget
 
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -67,7 +66,8 @@ class MainWindow(QMainWindow):
             self.m_flag=True
             self.m_Position=event.globalPos()-self.pos() #获取鼠标相对窗口的位置
             event.accept()
-            self.setCursor(QCursor(Qt.OpenHandCursor))  #更改鼠标图标
+            #self.setCursor(QCursor(Qt.OpenHandCursor))  #更改鼠标图标为手型
+            self.setCursor(QCursor(Qt.SizeAllCursor))  #更改鼠标图标为十字箭头
     #重写鼠标移动函数（实现窗体拖拽第2步）
     def mouseMoveEvent(self, QMouseEvent):
         if Qt.LeftButton and self.m_flag:  
